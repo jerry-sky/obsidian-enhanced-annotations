@@ -13,6 +13,7 @@
     const onClick = () => {
         selectText(annotation, plugin);
     };
+    const settings = plugin.settings;
 </script>
 
 <div
@@ -34,7 +35,7 @@
         <span style="position: absolute; bottom: 0; white-space:nowrap">{annotation.label}</span>
     </span>
 
-    {#if (annotation.inlineFootnote)}
+    {#if ($settings.experimental.inlineFootnotes && annotation.inlineFootnote)}
         <div style="margin-top: 2px;">
             <span style="vertical-align: middle;">
                 <CornerDownRight size={13} />
